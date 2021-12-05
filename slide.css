@@ -1,0 +1,311 @@
+body {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    height: 100vh;
+    font-family: 'Roboto', sans-serif;
+ }
+ .credit {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: #000;
+ }
+ .options {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    overflow: hidden;
+    min-width: 600px;
+    max-width: 900px;
+    width: calc(100% - 100px);
+    height: 400px;
+ }
+ .option {
+    position: relative;
+    overflow: hidden;
+    min-width: 60px;
+    margin: 10px;
+    background: var(--optionBackground, var(--defaultBackground, #e6e9ed));
+    background-size: auto 120%;
+    background-position: center;
+    cursor: pointer;
+    transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
+ }
+ .option:nth-child(1) {
+    --defaultBackground: #ed5565;
+ }
+ .option:nth-child(2) {
+    --defaultBackground: #fc6e51;
+ }
+ .option:nth-child(3) {
+    --defaultBackground: #ffce54;
+ }
+ .option:nth-child(4) {
+    --defaultBackground: #2ecc71;
+ }
+ .option:nth-child(5) {
+    --defaultBackground: #5d9cec;
+ }
+ .option.active {
+    flex-grow: 10000;
+    transform: scale(1);
+    max-width: 600px;
+    margin: 0px;
+    border-radius: 40px;
+    background-size: auto 100%;
+ }
+ .option.active .shadow {
+    box-shadow: inset 0 -120px 120px -120px black, inset 0 -120px 120px -100px black;
+ }
+ .option.active .label {
+    bottom: 20px;
+    left: 20px;
+ }
+ .option.active .info > div {
+    left: 0px;
+    opacity: 1;
+ }
+ .option:not(.active) {
+    flex-grow: 1;
+    border-radius: 30px;
+ }
+ .option:not(.active) .shadow {
+    bottom: -40px;
+    box-shadow: inset 0 -120px 0 -120px black, inset 0 -120px 0 -100px black;
+ }
+ .option:not(.active) .label {
+    bottom: 10px;
+    left: 10px;
+ }
+ .option:not(.active) .info > div {
+    left: 20px;
+    opacity: 0;
+ }
+ .shadow {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    height: 120px;
+    transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
+ }
+ .label {
+    display: flex;
+    position: absolute;
+    right: 0px;
+    height: 40px;
+    transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
+ }
+ .icon {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    min-width: 40px;
+    max-width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    background-color: white;
+    color: var(--defaultBackground);
+ }
+ .info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 10px;
+    color: white;
+    white-space: pre;
+ }
+ .info > div {
+    position: relative;
+    transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95), opacity 0.5s ease-out;
+ }
+ .main {
+    font-weight: bold;
+    font-size: 1.2rem;
+ }
+ .sub {
+    transition-delay: 0.1s;
+ }
+ 
+
+
+
+
+
+ /*Fliter menu*/
+.filter-menu{
+   width: 100%;
+   margin: 50px auto;
+}
+.filter-menu h1{
+   text-align: center;
+   text-transform: uppercase;
+   color: #048654;
+   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+   font-size: 4rem;
+}
+.ul{
+   display: flex;
+   justify-content: center;
+   flex-wrap: wrap;
+   border-bottom: 3px solid #27302C;
+   padding-bottom: 10px;
+   margin-bottom: 10px;
+}
+.ul li{
+   list-style: none;
+   padding: 9px 25px;
+   background-color: #048654;
+   cursor: pointer;
+   margin: 7px 10px;
+   color: #FFF;
+   font-weight: bolder;
+   border-radius: 15px;
+}
+.ul li:hover{
+   background-color: #1D2521;
+}
+.ul li.current{
+   background-color: #393939;
+}
+.ul li.current:hover{
+   background-color: #A6A6A6;
+}
+/* .items{
+   width: 100%;
+   padding: 0px 10px;
+   display: flex;
+   justify-content: center;
+   flex-wrap: wrap;
+}
+.items img{
+   width: 250px;
+   height: 220px;
+   margin: 10px;
+
+}
+.items img:hover{
+   filter: brightness(0.5);
+} */
+.items {
+   position: relative;
+   width: 100%;
+   padding: 0px;
+   display: grid;
+   grid-gap: 20px;
+   grid-template-columns: 1 1fr ;
+}
+ .items .recentOrders {
+   font-size: 15px;
+   position: relative;
+   min-height: 530px;
+   padding: 20px;
+   box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+   border-radius: 15px;
+   background: rgba(109, 107, 107, 0.103);
+   overflow: hidden;
+   border-top: 1px solid rgba(255, 255, 255, 0.5);
+   border-left: 1px solid rgba(255, 255, 255, 0.5);
+   backdrop-filter: blur(50px);
+   height: 200px;
+   width: 100%;
+   overflow: scroll;
+}
+ .scroll-text {
+   display: block !important;
+   padding-top: 10px;
+}
+ 
+ .scroll-text .fa {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   color: red;
+   font-size: 26px;
+}
+ .foodpic{
+   width: 100%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   color: yellow;
+}
+ 
+ .foodpic h2 {
+   font-weight: 600;
+   font-size: 30px;
+   color: rgb(238, 176, 62);
+}
+ .cardHeader {
+   display: flex;
+   justify-content: space-between;
+   align-items: flex-start;
+}
+ .cardHeader h2{
+   font-size: 30px;
+   color: rgb(238, 176, 62);
+}
+ .scroll-text {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+ 
+ .btn {
+   position: relative;
+   padding: 5px 10px;
+   background: #03a9f4;
+   color: white;
+   text-decoration: none;
+   border-radius: 6px;
+}
+ .items table {
+   width: 100%;
+   position: relative;
+   border-collapse: collapse;
+   margin-top: 10px;
+}
+ 
+ .items table thead td {
+   font-weight: 600;
+   padding-left: 10px;
+   color: rgba(218, 184, 36, 0.623);
+   font-size: 20px;
+}
+ 
+ .recentOrders table tr {
+   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+ .items .recentOrders table tbody tr:last-child {
+   border-bottom: none;
+}
+ .items .recentOrders table tbody tr:hover {
+   background: rgba(218, 184, 36, 0.623);
+   color: white;
+}
+ .items .recentOrders table tr td {
+   padding: 9px 5px;
+}
+ /* .details .recentOrders table thead tr td:last-child,
+ .details .recentOrders table tbody tr td:last-child {
+   text-align: right;
+ } */
+ .items .recentOrders table thead tr td:nth-child(2),
+ .items .recentOrders table tbody tr td:nth-child(2) {
+   text-align: right;
+   padding-right: 20px;
+}
+ /* .details .recentOrders table thead tr td:nth-child(3),
+ .details .recentOrders table tbody tr td:nth-child(3) {
+   text-align: center;
+ } */
+@media(max-width:768px){
+   .ul{
+       flex-direction: column;
+       text-align: center;
+   }
+}

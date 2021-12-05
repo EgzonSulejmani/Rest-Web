@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="slide.css">
+    
+</head>
+<body>
+    <div class="options">
+        <div class="option active" style='--optionBackground:url(https://66.media.tumblr.com/6fb397d822f4f9f4596dff2085b18f2e/tumblr_nzsvb4p6xS1qho82wo1_1280.jpg);'>
+           <div class="shadow"></div>
+           <div class="label">
+              <div class="icon">
+                 <i class="fas fa-walking"></i>
+              </div>
+              <div class="info">
+                 <div class="main">Lorem</div>
+                 <div class="sub">Lorem ipsum dolor </div>
+              </div>
+           </div>
+        </div>
+        <div class="option" style='--optionBackground:url(https://66.media.tumblr.com/8b69cdde47aa952e4176b4200052abf4/tumblr_o51p7mFFF21qho82wo1_1280.jpg);'>
+           <div class="shadow"></div>
+           <div class="label">
+              <div class="icon">
+                 <i class="fas fa-snowflake"></i>
+              </div>
+              <div class="info">
+                 <div class="main">Lorem</div>
+                 <div class="sub">Lorem ipsum dolor </div>
+              </div>
+           </div>
+        </div>
+        <div class="option" style='--optionBackground:url(https://66.media.tumblr.com/5af3f8303456e376ceda1517553ba786/tumblr_o4986gakjh1qho82wo1_1280.jpg);'>
+           <div class="shadow"></div>
+           <div class="label">
+              <div class="icon">
+                 <i class="fas fa-tree"></i>
+              </div>
+              <div class="info">
+                 <div class="main">Lorem</div>
+                 <div class="sub">Lorem ipsum dolor </div>
+              </div>
+           </div>
+        </div>
+        <div class="option" style='--optionBackground:url(https://66.media.tumblr.com/5516a22e0cdacaa85311ec3f8fd1e9ef/tumblr_o45jwvdsL11qho82wo1_1280.jpg);'>
+           <div class="shadow"></div>
+           <div class="label">
+              <div class="icon">
+                 <i class="fas fa-tint"></i>
+              </div>
+              <div class="info">
+                 <div class="main">Lorem</div>
+                 <div class="sub">Lorem ipsum dolor </div>
+              </div>
+           </div>
+        </div>
+        <div class="option" style='--optionBackground:url(https://66.media.tumblr.com/f19901f50b79604839ca761cd6d74748/tumblr_o65rohhkQL1qho82wo1_1280.jpg);'>
+           <div class="shadow"></div>
+           <div class="label">
+              <div class="icon">
+                 <i class="fas fa-sun"></i>
+              </div>
+              <div class="info">
+                 <div class="main">Lorem</div>
+                 <div class="sub">Lorem ipsum dolor </div>
+              </div>
+           </div>
+        </div>
+     </div>
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+     <script>
+         $('.option').click(function(){
+            $('.option').removeClass('active');
+            $(this).addClass('active');
+        });
+     </script>
+</body>
+</html>
+
+
+<script>
+   const liproduct = document.querySelectorAll('ul li');
+   const recentOrders = document.querySelectorAll('.items .recentOrders');
+   liproduct.forEach(li => {
+       li.onclick = function() {
+               //active
+               liproduct.forEach(li => {
+               li.className = "";
+           })
+           li.className = "current";
+           //filter
+           const value = li.textContent;
+           recentOrders.forEach(recentOrders => {
+               recentOrders.style.display = "none";
+               if(recentOrders.getAttribute('data-filter')== value.toLocaleLowerCase() ||
+               value == "All Menu"){
+                   recentOrders.style.display = "block";
+               }
+           })
+
+       }
+      
+       
+       
+       
+   })
+</script>
+
+
+
+ <!--========== ABOUT ==========-->
+ <section class="about section bd-container" id="about">
+   <div class="about__container">
+       <!-- <div class="about__data">
+           <span class="section-subtitle about__initial">About us</span>
+           <h2 class="section-title about__initial">We cook the best <br> tasty food</h2>
+           <p class="about__description">We cook the best food in the entire city, with excellent customer service, the best meals and at the best price, visit us.</p>
+           <a href="#" class="button">Explore history</a>
+       </div>
+
+       <img src="assets/img/about.jpg" alt="" class="about__img"> -->
+       <div class="filter-menu">
+           <h1>SPEISEKARTE</h1>
+           <ul class="ul">
+               <li class="current">All Menu</li>
+               <li>SUPPEN</li>
+               <li>VORSPEISEN & VESPER</li>
+               <li>SALATE</li>
+               <li>FLEISCHLOSES</li>
+               <li>FISCH & FLEISCH</li>
+               <li>FISCHGERICHTE</li>
+               <li>FLEISCHGERICHTE</li>
+           </ul>
+           <div class="items" id="menu">
+               <div class="recentOrders" data-filter="suppen">
+                   <div class="cardHeader">
+                       <h2>SUPPEN</h2>
+                       <!-- <div class="scroll-text">
+                           <h3>Scroll for more</h3>
+                           <i class="fa fa-chevron-down"></i>
+                       </div> -->
+                       <!-- <a href="" class="btn">View All</a>   -->
+                   </div>
+                   <table>
+                       <thead>
+                           <tr>
+                               <td>Name Food</td>
+                               <td>Preis</td>
+   
+                           </tr>
+                       </thead>
+                       <tbody>
+                           <tr>
+                               <td>RinderkraftbrÃ¼he mit hausgemachten KrÃ¤uterflÃ¤dlea</td>
+                               <td>â¬ 5,70</td>
+   
+                           </tr>
+                           <tr>
+                               <td>RinderkraftbrÃ¼he mit Maultascheneinlagea</td>
+                               <td>â¬5,90</td>
+   
+                           </tr>
+                           <tr>
+                               <td>Fruchtige Tomatencremesuppe mit SahnehÃ¤ubchen</td>
+                               <td>â¬5,90</td>
+   
+                           </tr>
+   
+                       </tbody>
+   
+                   </table>
+   
+               </div>
+               <div class="recentOrders" data-filter="vorspeisen & vesper">
+                   <div class="cardHeader">
+                       <h2>VORSPEISEN & VESPER</h2>
+                       <!-- <div class="scroll-text">
+                           <h3>Scroll for more</h3>
+                           <i class="fa fa-chevron-down"></i>
+                       </div> -->
+                       <!-- <a href="" class="btn">View All</a>   -->
+                   </div>
+                   <table>
+                       <thead>
+                           <tr>
+                               <td>Name Food</td>
+                               <td>Preis</td>
+   
+                           </tr>
+                       </thead>
+                       <tbody>
+                           <tr>
+                               <td>GerÃ¤ucherter Lachs mit Meerettichsauce und Salatbouqueta</td>
+                               <td>â¬12,90</td>
+   
+                           </tr>
+                           <tr>
+                               <td>Warmes, gerÃ¤uchertes Felchenfilet an buntem Salatbouquet</td>
+                               <td>â¬ 15,90</td>
+   
+                           </tr>
+                           <tr>
+                               <td>Wurstsalat nach Schweizer Art mit KÃ¤se </td>
+                               <td>â¬ 11,90</td>
+   
+                           </tr>
+                           <tr>
+                               <td>Speck und KÃ¤se aufschnitt fein garniert</td>
+                               <td>â¬ 11,90</td>
+   
+                           </tr>
+   
+   
+                       </tbody>
+   
+                   </table>
+   
+               </div>
+               <div class="recentOrders" data-filter="salate">
+                   <div class="cardHeader">
+                       <h2>SALATE</h2>
+                       <!-- <div class="scroll-text">
+                           <h3>Scroll for more</h3>
+                           <i class="fa fa-chevron-down"></i>
+                       </div> -->
+                       <!-- <a href="" class="btn">View All</a>   -->
+                   </div>
+                   <table>
+                       <thead>
+                           <tr>
+                               <td>Name Food</td>
+                               <td>Preis</td>
+   
+                           </tr>
+                       </thead>
+                       <tbody>
+                           <tr>
+                               <td>Gemischter Beilagensalat mit gerÃ¶steten Sonnenblumenkernen</td>
+                               <td>â¬ 5,50</td>
+   
+                           </tr>
+                           <tr>
+                               <td>Blattsalat mit gerÃ¶steten Sonnenblumenkernen</td>
+                               <td>â¬4,90 </td>
+   
+                           </tr>
+                           <tr>
+                               <td>GroÃer, knackiger, bunt gemischter Salatteller wahlweise</td>
+                               <td>â¬13,90</td>
+   
+                           </tr>
+                           <tr>
+                               <td>Mit zart gebratenen HÃ¼hnerbruststreifen & Pilzen,
+                                   abgerundet mit KrÃ¤utern der Provoncea
+                               </td>
+                               <td>â¬15,50</td>
+   
+                           </tr>
+                           <tr>
+                               <td>GarnelenspieÃ in KrÃ¤uterbutter pikant gebrateno</td>
+                               <td>â¬15,90</td>
+   
+                           </tr>
+                           <tr>
+                               <td>mit gebratenem, Zanderfileto</td>
+                               <td>â¬17,50</td>
+   
+                           </tr>
+                           <tr>
+                               <td><b>Unsere groÃen Salate servieren wir
+                                       mit einem hausgemachten, leichten Dressing & Hagnauer Brot</b>
+                               </td>
+   
+   
+                           </tr>
+   
+                       </tbody>
+   
+                   </table>
+   
+               </div>
+               <div class="recentOrders" data-filter="fleischloses">
+                   <div class="cardHeader">
+                       <h2>FLEISCHLOSES</h2>
+                       <!-- <div class="scroll-text">
+                           <h3>Scroll for more</h3>
+                           <i class="fa fa-chevron-down"></i>
+                       </div> -->
+                       <!-- <a href="" class="btn">View All</a>   -->
+                   </div>
+                   <table>
+                       <thead>
+                           <tr>
+                               <td>Name Food</td>
+                               <td>Preis</td>
+   
+                           </tr>
+                       </thead>
+                       <tbody>
+                           <tr>
+                               <td>KÃ¤sespÃ¤tzle mit Schmelzzwiebeln</td>
+                               <td>â¬10,90</td>
+   
+                           </tr>
+                           <tr>
+                               <td>GemÃ¼Ãe vom Grill mit Mozzarella</td>
+                               <td>â¬15,90</td>
+   
+                           </tr>
+                           <tr>
+                               <td>Pfannkuchen mit vielerlei GemÃ¼se und Pilzrahmsauce </td>
+                               <td>â¬15,50</td>
+   
+                           </tr>
+   
+                       </tbody>
+   
+                   </table>
+   
+               </div>
+               <div class="recentOrders" data-filter="fisch & fleisch">
+                   <div class="cardHeader">
+                       <h2>FISCH & FLEISCH</h2>
+                       <!-- <div class="scroll-text">
+                           <h3>Scroll for more</h3>
+                           <i class="fa fa-chevron-down"></i>
+                       </div> -->
+                       <!-- <a href="" class="btn">View All</a>   -->
+                   </div>
+                   <table>
+                       <thead>
+                           <tr>
+                               <td>Name Food</td>
+                               <td>Preis</td>
+   
+                           </tr>
+                       </thead>
+                       <tbody>
+                           <tr>
+                               <td>âSteghausâ Teller
+   
+                                   In Butter gebratenes Zanderfilet, dazu Garnelen
+                                   anbei ein kleines RinderrÃ¼ckensteak, serviert mit Salzkartoffeln</td>
+                               <td>â¬27,50</td>
+   
+                           </tr>
+                           <tr>
+                               <td>âSurf & Turfâ
+   
+                                   Zanderfilet in Zitronen- Estragonbutter gebraten, mit SchweinerÃ¼ckensteak
+                                   und Garnelen, dazu Salzkartoffeln
+                               </td>
+                               <td>â¬25,90</td>
+   
+                           </tr>
+   
+                       </tbody>
+   
+                   </table>
+   
+               </div>
+               <div class="recentOrders" data-filter="fischgerichte">
+                   <div class="cardHeader">
+                       <h2>FISCHGERICHTE</h2>
+                       <!-- <div class="scroll-text">
+                           <h3>Scroll for more</h3>
+                           <i class="fa fa-chevron-down"></i>
+                       </div> -->
+                       <!-- <a href="" class="btn">View All</a>   -->
+                   </div>
+                   <table>
+                       <thead>
+                           <tr>
+                               <td>Name Food</td>
+                               <td>Preis</td>
+   
+                           </tr>
+                       </thead>
+                       <tbody>
+                           <tr>
+                               <td>Fein gebratene Zanderfilets an Mandelbutter
+                                   mit Salzkartoffeln & Salat
+                               </td>
+                               <td>â¬19,80</td>
+   
+                           </tr>
+                           <tr>
+                               <td>Zanderfilets gebraten aufHagnauerMÃ¼ller-Thurgau-SÃ¶Ãle
+                                   dazu Reis & Salat
+                               </td>
+                               <td>â¬19,80</td>
+   
+                           </tr>
+                           <tr>
+                               <td>Gebratenes Zanderfilet auf hausgemachtem,
+                                   gemÃ¼segefÃ¼lltem Pfannkuchen, serviert mit KrÃ¤uterbutter
+                               </td>
+                               <td>â¬15,70</td>
+   
+                           </tr>
+                           <tr>
+                               <td>Gebratene Zanderfilets auf gedÃ¤mpftem GemÃ¼sebett mit Salzkartoffeln</td>
+                               <td>â¬18,50</td>
+   
+                           </tr>
+                           <tr>
+                               <td>Hagnauer Fischteller
+                                   Fischvariation Zanderfilet, Meerbarbenfilet, Gambas und
+                                   Vegetarische Maultaschen wahlweise mit Reis oder Salzkartoffeln
+                               </td>
+                               <td>â¬28,50</td>
+   
+                           </tr>
+                           <tr>
+                               <td>Aus dem Meer
+                                   Fettuccini&Garnelen abgeschwenkt mit GemÃ¼se in feiner SahnesoÃe
+                               </td>
+                               <td>â¬13,80</td>
+   
+                           </tr>
+   
+                       </tbody>
+   
+                   </table>
+   
+               </div>
+               <div class="recentOrders" data-filter="fleischgerichte">
+                   <div class="cardHeader">
+                       <h2>FLEISCHGERICHTE</h2>
+                       <div class="scroll-text">
+                           <h3>Scroll for more</h3>
+                           <i class="fa fa-chevron-down"></i>
+                       </div>
+                       <!-- <a href="" class="btn">View All</a>   -->
+                   </div>
+                   <table>
+                       <thead>
+                           <tr>
+                               <td>Name Food</td>
+                               <td>Preis</td>
+   
+                           </tr>
+                       </thead>
+                       <tbody>
+                           <tr>
+                               <td>SchwÃ¤bischer Zwiebelrostbraten vom Rind
+                                   mit hausgemachten SpÃ¤tzle & Beilagensalat
+                               </td>
+                               <td>â¬24,50</td>
+   
+                           </tr>
+                           <tr>
+                               <td>Maultaschen, nach schwÃ¤bischer Arta,k,l
+                                   mit FleischfÃ¼llung & unserem selbstgemachten Kartoffelsalat
+                               </td>
+                               <td>â¬13,50</td>
+   
+                           </tr>
+                           <tr>
+                               <td>SchwÃ¤bische Pfanne mit Schweinefilet, Maultaschen
+                                   und Kartoffelsalat 
+                               </td>
+                               <td>â¬20,80</td>
+   
+                           </tr>
+                           <tr>
+                               <td>Rumpsteak mit KrÃ¤uterbutter, Pommes Frites &Beilagensalat</td>
+                               <td>â¬24,50</td>
+   
+                           </tr>
+                           <tr>
+                               <td>Rindertafelspitz in MeerrettichsoÃe & Salzkartoffeln
+                                   garniert mit Preiselbeeren
+                               </td>
+                               <td>â¬18,90</td>
+   
+                           </tr>
+                           <tr>
+                               <td>Filet vom heimischen Rind an PfeffersoÃe
+                                   mit bunter GemÃ¼segarnitur & SpÃ¤tzle
+                               </td>
+                               <td>â¬29,80</td>
+   
+                           </tr>
+                           <tr>
+                               <td>Schweinemedaillons vom Grill dazu KÃ¤sespÃ¤tzle,
+                                   Schmelzzwiebeln &ChampignonrahmsoÃe
+                               </td>
+                               <td>â¬20,30</td>
+   
+                           </tr>
+                           <tr>
+                               <td>Zartes HÃ¼hnerbrÃ¼stchen auf KrÃ¤utersahnesoÃe
+                                   mit SpÃ¤tzle & Beilagensalat
+                               </td>
+                               <td>â¬16,90</td>
+   
+                           </tr>
+                           <tr>
+                               <td>Gebratene HÃ¼hnerstreifen auf hausgemachten GemÃ¼segefÃ¼llte
+                                   Pfannkuchen, serviert mit KrÃ¤uterbutter
+                               </td>
+                               <td>â¬16,90</td>
+   
+                           </tr>
+                           <tr>
+                               <td>SchweinerÃ¼ckensteak vom Grill
+                                   wahlweise
+                               </td>
+   
+   
+                           </tr>
+                           <tr>
+                               <td>â¢ nach Zigeunerart pikant mit Reis & Beilagensalat </td>
+                               <td>â¬18,50</td>
+   
+                           </tr>
+                           <tr>
+                               <td>â¢ nach JÃ¤gerart mit SpÃ¤tzle & Beilagensalat</td>
+                               <td>â¬18,50</td>
+   
+                           </tr>
+                           <tr>
+                               <td>â¢ paniert mit Pommes Frites & Beilagensalat </td>
+                               <td>â¬18,50</td>
+   
+                           </tr>
+   
+                       </tbody>
+   
+                   </table>
+   
+               </div>
+               
+           </div>
+       </div>
+   </div>
+</section>
